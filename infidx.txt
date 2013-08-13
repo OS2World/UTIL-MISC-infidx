@@ -1,0 +1,45 @@
+Archive-Name: infidx12.zip
+Program-Name: infidx.exe
+Version.....: 1.3
+Abstract....: A program to open an INF-file from a user configurable selection-
+              listbox of all INF-files instead of over WPS-Objects.
+OS/2-Version: 2.1 GA german (builded and testet)
+Purpose.....: As I have much of my INF-files on a removable MO-disk, I don't
+              want to create static WPS-objects for them, but I need a way to
+              decect dynamically which INF-files are there and display only 
+              these ones. (Is the disk insertet or not?)
+ 
+              Other advantages are:
+               - fixed screen portion needed (independent of # of INF-files)
+               - order/sorting determined by user (order of dirs in BOOKSHELF
+                 and order of entries in the config files)
+               - the setup is easily ported over all reinstallations, as it is
+                 done in plain text files
+               - you can add your own (longer) titles to the INF-files in the 
+                 list
+ 
+              This program is to fullfill this job. It will search in all 
+              directories listed in the environment variable BOOKSHELF for a
+              file called 'infidx'. These configuration files must hold the
+              name and a description for all the INF-files that are to be shown
+              in the selection list. There may reside one 'infidx'-file in each
+              scanned directory and the contents of all of them is shown in the
+              list in the order the entries are read.
+ 
+              The program interfaces the user with a dialog. This dialog
+              contains a listbox, and four buttons (OPEN, EXIT, REINIT and 
+              ABOUT).
+ 
+              To view an INF-file, select the corresponding entry in the listbox
+              and push the OPEN button.
+ 
+              To exit the program just push the EXIT button.
+ 
+              To rebuild the list after any changes made by you (changes of a
+              config file or media changes in drives in your BOOKSHELF-path).
+Keywords....: PM, 32bit, INF, VIEW, PM-TOOLS, DOCUMENTATION
+Location....: ??? pm-tools (as I write this I do not know where it was put by
+              you)
+Replacement.: This release replaces infidx12.zip.
+Changes.....: - Fixed a memory leak on reinit action.
+              - Added LICENCE and DISCLAIMER to documentation.

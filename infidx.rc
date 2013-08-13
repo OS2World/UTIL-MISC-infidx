@@ -1,0 +1,39 @@
+/*===========================================================================
+ * infidx.rc  -- for documentation see infidx.c
+ *
+ * $Log:	infidx.rc $
+ *Revision 1.2  93/07/02  11:10:34  UWE
+ *Added positioning possibility by user and REINIT-button.
+ *
+ *Revision 1.1  93/07/01  22:09:00  UWE
+ *Initial revision
+ *
+ *===========================================================================*/
+#define  INCL_NLS   1
+#include <os2.h>
+#include "infidx.h"
+
+/*********************************************/
+/* the area text window                      */
+/*********************************************/
+ICON ID_FW_AREA infidx.ico
+
+/****************************/
+/* the selection dialog box */
+/****************************/
+                                                /*   x   y   dx   dy */
+DLGTEMPLATE UK_SEL_DLG LOADONCALL MOVEABLE DISCARDABLE
+BEGIN                                           
+    DIALOG  "INFIDX - *.INF-index/starter", UK_SEL_DLG,  
+                                                     0,  0, 238,  88,
+            WS_VISIBLE, FCF_TITLEBAR | FCF_ICON 
+    BEGIN
+        LISTBOX         UK_SEL_LBOX              ,   5, 20, 227,  70
+        ICON            ID_FW_AREA, UK_SEL_ICON  ,   5,  1,  32,  32
+        DEFPUSHBUTTON   "OPEN"    , UK_SEL_OPEN  ,  45,  2,  40,  15
+        PUSHBUTTON      "EXIT"    , UK_SEL_CANCEL,  95,  2,  40,  15
+        PUSHBUTTON      "REINIT"  , UK_SEL_REINIT, 145,  2,  40,  15
+        PUSHBUTTON      "ABOUT"   , UK_SEL_ABOUT , 195,  2,  40,  15
+    END
+END
+
